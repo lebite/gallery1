@@ -1,7 +1,23 @@
-#  Le Bite - Gallery - CRUD API 
+#  Le Bite - Gallery - CRUD API
 
-**GALLERY API SPECS**
+## API
 
+| HTTP Method   | Endpoint                         | Description              |
+|:--------------|:---------------------------------|:-------------------------|
+| GET           | /:restaurant_id/photos           | Fetch photos             |
+| POST          | /:restaurant_id/photos           | Insert a new photo       |
+| DELETE        | /:restaurant_id/photos/:image_id | Delete a photo           |
+| PUT           | /:restaurant_id/photos/:image_id | Replace a photo          |
+| PATCH         | /:restaurant_id/photos/:image_id | Update a photo           |
+
+## API Options
+1. [GET (fetch)](#Fetch)
+1. [POST (insert)](#Insert)
+1. [DELETE](#Delete)
+1. [PUT (replace)](#Replace)
+1. [PATCH (update)](#Update)
+---
+## Fetch
 `GET /:restaurant_id/photos/`
 
 **INPUT**: 
@@ -24,7 +40,7 @@ _If `restaurant_id` is found in database, return:_
     "metadata": {
       "creationDate": <date>,
       "user_id": <string>,
-      "isDiner": <boolean>,
+      "owner_generated": <boolean>,
     },
     "snippet": {
       "sizes": {
@@ -59,8 +75,21 @@ _If `restaurant_id` is not found in database, return:_
 
 **Code:** 404
 
-**Message:** Restaurant not found
+[resource does not exist]: #
 
+**Message:** RESTAURANT NOT FOUND
+
+_If endpoint is not recognized by the server, return:_
+
+**Code:** 400
+
+[server doesn't recognize endpoint (incorrect request syntax) ]: #
+
+**Message:** INVALID REQUEST
+
+
+---
+## Insert
 `POST /:restaurant_id/photos`
 
 **INPUT**: 
@@ -74,7 +103,7 @@ JSON new restaurant photo data
   "metadata": {
     "creationDate": <date>,
     "user_id": <string>,
-    "isDiner": <boolean>,
+    "owner_generated": <boolean>,
   },
   "snippet": {
     "sizes": {
@@ -93,15 +122,15 @@ JSON new restaurant photo data
 _If post is successful, return:_
 
 **Code:** 201 
-
 **Message:** OK
 
 _If post is not successful, return:_
 
 **Code:** 400
+**Message:** INVALID REQUEST
 
-**Message:** BAD REQUEST 
-
+---
+## Delete
 `DELETE /:restaurant_id/photos/:image_id`
 
 **INPUT:** 
@@ -113,14 +142,14 @@ _If post is not successful, return:_
 _If delete is successful, return:_
 
 **Code:** 200
-
 **Message:** OK
 
-_If post is not successful, return:_ 
+_If delete is not successful, return:_ 
 
 **Code:** 404
-**Message:** NOT FOUND  
-
+**Message:** RESOURCE NOT FOUND  
+---
+## Replace
 `PUT /:restaurant_id/photos/:image_id`
 
 **INPUT:**: `restaurant_id`, `image_id` and new photo JSON data
@@ -132,7 +161,7 @@ _If post is not successful, return:_
   "metadata": {
     "creationDate": <date>,
     "user_id": <string>,
-    "isDiner": <boolean>,
+    "owner_generated": <boolean>,
   },
   "snippet": {
     "sizes": {
@@ -151,11 +180,15 @@ _If post is not successful, return:_
 _If put is successful, return:_
 
 **Code:** 200
+**Message:** OK
 
 _If put is not successful, return:_
  
 **Code:** 400
+**Message:** INVALID REQUEST
 
+---
+## Update
 `PATCH /:restaurant_id/photos/:image_id`
 
 **INPUT:**: `restaurant_id`, `image_id` and new photo JSON data
@@ -167,7 +200,7 @@ _If put is not successful, return:_
   "metadata": {
     "creationDate": <date>,
     "user_id": <string>,
-    "isDiner": <boolean>,
+    "owner_generated": <boolean>,
   },
   "snippet": {
     "sizes": {
