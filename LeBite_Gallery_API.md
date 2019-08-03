@@ -37,11 +37,11 @@ _If `restaurant_id` is found in database, return:_
   {
     "restaurant_id": <number>,
     "owner_generated": <boolean>,
-    "creationDate": <date>,
+    "dine_date": <date>,
     "image_id": <number>,
     "user_id": <string>,
-    "url_original": <string>,
-    "url_mobile": <string>,
+    "url": <string>,
+    "url_sm": <string>,
   },
   ...
 ]
@@ -76,11 +76,11 @@ JSON new restaurant photo data
 {
   "restaurant_id": <number>,
   "owner_generated": <boolean>,
-  "creationDate": <date>,
+  "dine_date": <date>,
   "image_id": <number>,
   "user_id": <string>,
-  "url_original": <string>,
-  "url_mobile": <string>,
+  "url": <string>,
+  "url_sm": <string>,
 }
 ```
 
@@ -125,11 +125,11 @@ _If delete is not successful, return:_
 {
   "restaurant_id": <number>,
   "owner_generated": <boolean>,
-  "creationDate": <date>,
+  "dine_date": <date>,
   "image_id": <number>,
   "user_id": <string>,
-  "url_original": <string>,
-  "url_mobile": <string>,
+  "url": <string>,
+  "url_sm": <string>,
 }
 ```
 
@@ -155,11 +155,11 @@ _If put is not successful, return:_
 {
   "restaurant_id": <number>,
   "owner_generated": <boolean>,
-  "creationDate": <date>,
+  "dine_date": <date>,
   "image_id": <number>,
   "user_id": <string>,
-  "url_original": <string>,
-  "url_mobile": <string>,
+  "url": <string>,
+  "url_sm": <string>,
 }
 ```
 
