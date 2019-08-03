@@ -36,36 +36,12 @@ _If `restaurant_id` is found in database, return:_
 [
   {
     "restaurant_id": <number>,
+    "owner_generated": <boolean>,
+    "creationDate": <date>,
     "image_id": <number>,
-    "metadata": {
-      "creationDate": <date>,
-      "user_id": <string>,
-      "owner_generated": <boolean>,
-    },
-    "snippet": {
-      "sizes": {
-        "original": {
-          "url": <string>,
-          "width": <number>,
-          "height": <number>,
-        },
-        "medium": {
-          "url": <string>,
-          "width": <number>,
-          "height": <number>,
-        },
-        "large": {
-          "url": <string>,
-          "width": <number>,
-          "height": <number>,
-        },
-        "wide-huge": {
-          "url": <string>,
-          "width": <number>,
-          "height": <number>,
-        },
-      },
-    }
+    "user_id": <string>,
+    "url_original": <string>,
+    "url_mobile": <string>,
   },
   ...
 ]
@@ -99,21 +75,12 @@ JSON new restaurant photo data
 ```
 {
   "restaurant_id": <number>,
+  "owner_generated": <boolean>,
+  "creationDate": <date>,
   "image_id": <number>,
-  "metadata": {
-    "creationDate": <date>,
-    "user_id": <string>,
-    "owner_generated": <boolean>,
-  },
-  "snippet": {
-    "sizes": {
-      "original": {
-        "url": <string>,
-        "width": <number>,
-        "height": <number>,
-      },
-    },
-  }
+  "user_id": <string>,
+  "url_original": <string>,
+  "url_mobile": <string>,
 }
 ```
 
@@ -157,21 +124,12 @@ _If delete is not successful, return:_
 ```
 {
   "restaurant_id": <number>,
+  "owner_generated": <boolean>,
+  "creationDate": <date>,
   "image_id": <number>,
-  "metadata": {
-    "creationDate": <date>,
-    "user_id": <string>,
-    "owner_generated": <boolean>,
-  },
-  "snippet": {
-    "sizes": {
-      "original": {
-        "url": <string>,
-        "width": <number>,
-        "height": <number>,
-      },
-    },
-  }
+  "user_id": <string>,
+  "url_original": <string>,
+  "url_mobile": <string>,
 }
 ```
 
@@ -196,21 +154,12 @@ _If put is not successful, return:_
 ```
 {
   "restaurant_id": <number>,
+  "owner_generated": <boolean>,
+  "creationDate": <date>,
   "image_id": <number>,
-  "metadata": {
-    "creationDate": <date>,
-    "user_id": <string>,
-    "owner_generated": <boolean>,
-  },
-  "snippet": {
-    "sizes": {
-      "original": {
-        "url": <string>,
-        "width": <number>,
-        "height": <number>,
-      },
-    },
-  }
+  "user_id": <string>,
+  "url_original": <string>,
+  "url_mobile": <string>,
 }
 ```
 
