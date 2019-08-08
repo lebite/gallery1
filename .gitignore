@@ -11,3 +11,5 @@ coverage
 #misc
 .DS_Store
 public/bundle.js
+secrets.js
+newrelic_agent.log
