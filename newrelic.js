@@ -9,7 +9,7 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name: ['Le Bite Gallery Service'],
+  app_name: ['Le Bite Gallery Service on EC2'],
   /**
    * Your New Relic license key.
    */
