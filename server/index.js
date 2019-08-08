@@ -1,7 +1,7 @@
 const nr = require('newrelic');
 const express = require('express');
 const morgan = require('morgan');
-const db = require('../db/image.js');
+const db = require('./model');
 const path = require('path');
 
 const app = express();
@@ -16,8 +16,12 @@ app.use('/:restaurant_id', express.static(path.join(__dirname, '/../public/')));
 
 app.get('/:restaurant_id/images', (req, res) => {
   const restaurantId = req.params.restaurant_id;
-  db.find({restaurant_id:restaurantId}, '-_id -__v', (err, data) => {
-    if (err) res.status(400).send(err);
-    res.status(200).send(data);
-  });
+
+  const query = 'SELECT * FROM images_by_restaurant_ec2 WHERE restaurant_id = ?';
+  db.execute(query, [ restaurantId ], {prepare: true})
+  .then(result => {
+    res.status(200).send(result.rows);
+  })
+  .catch(err => console.log(err));
+
 });
