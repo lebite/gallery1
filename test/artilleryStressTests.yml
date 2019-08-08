@@ -1,0 +1,21 @@
+# artillery stress test
+config:
+  target: 'http://localhost:3001'
+  http:
+    pool: 10 # All HTTP requests from all virtual users will be sent over the same 10 connections
+  phases:
+    - duration: 6
+      arrivalRate: 5
+    - duration: 120
+      arrivalRate: 5
+      rampTo: 400
+    - duration: 60
+      arrivalRate: 400
+  processor: './artilleryFunctions.js'
+scenarios:
+  - name: '' 
+    flow:
+    # call generateSomeIds
+    - function: 'generateIds'
+    - get:
+        url: '/{{ restaurant_id }}'
