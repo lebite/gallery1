@@ -41,6 +41,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.8.0",
     "morgan": "^1.9.1",
+    "newrelic": "^5.11.0",
     "nodemon": "^1.19.1",
     "otkit-icons": "^7.6.0",
     "style-loader": "^0.23.1",
