@@ -1,0 +1,11 @@
+// Replace FILL_ME_OUT and edit name of this file to secrets.js
+
+NEW_RELIC_LICENSE_KEY = 'FILL_ME_OUT';
+CASSANDRA_USERNAME = 'FILL_ME_OUT';
+CASSANDRA_PASSWORD = 'FILL_ME_OUT';
+
+module.exports = {
+  NEW_RELIC_LICENSE_KEY,
+  CASSANDRA_USERNAME,
+  CASSANDRA_PASSWORD,
+};
