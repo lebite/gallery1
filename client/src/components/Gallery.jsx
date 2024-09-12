@@ -92,8 +92,8 @@ class Gallery extends React.Component {
     restaurantId = parseInt(restaurantId);
     axios.get(`/${restaurantId}/images`)
       .then((response) => {
-        const imageURL = response.data.map(x => x.image_url);
-        this.setState({ photos: imageURL });
+        const photos = response.data.map(x => x.url);
+        this.setState({ photos });
       })
       .catch((error) => {
         console.log(error);
@@ -111,11 +111,6 @@ class Gallery extends React.Component {
     } = this.state;
     return (
       <div>
-        <img src='navbar.png' />
-        <Banner handleKeyPress={this.handleKeyPress} index={index} photos={photos} onClickForward={this.onClickForward} onClickBack={this.onClickBack} handleImageClick={this.handleImageClick} modal={modal} />
-        <div className={styles.save}><img src='save.png' /></div>
-          <div className={styles.ov}><img src='overviewbar.png' /></div>
-          <div className={styles.desc}><img src='desc.png' /></div>
         <Grid handleFlag={this.handleFlag} handleKeyPress={this.handleKeyPress} index={index} photos={photos} onClickForward={this.onClickForward} onClickBack={this.onClickBack} handleImageClick={this.handleImageClick} modal={modal} flag={flag} />
       </div>
     );
